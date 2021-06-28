@@ -13,17 +13,14 @@ import com.chandan.ecommerce.service.CheckoutService;
 @RequestMapping("/api/checkout")
 public class CheckOutController {
 	
-	 private CheckoutService checkoutService;
-
+		private CheckoutService checkoutService;
 	    public CheckOutController(CheckoutService checkoutService) {
 	        this.checkoutService = checkoutService;
 	    }
-
 	    @PostMapping("/purchase")
 	    public PurchaseResponse placeOrder(@RequestBody Purchase purchase) {
 
 	        PurchaseResponse purchaseResponse = checkoutService.placeOrder(purchase);
-
 	        return purchaseResponse;
 	    }
 
