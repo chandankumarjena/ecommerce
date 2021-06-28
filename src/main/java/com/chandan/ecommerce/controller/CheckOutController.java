@@ -17,11 +17,10 @@ public class CheckOutController {
 	    public CheckOutController(CheckoutService checkoutService) {
 	        this.checkoutService = checkoutService;
 	    }
+	    
 	    @PostMapping("/purchase")
 	    public PurchaseResponse placeOrder(@RequestBody Purchase purchase) {
-
 	        PurchaseResponse purchaseResponse = checkoutService.placeOrder(purchase);
 	        return purchaseResponse;
 	    }
-
 }
